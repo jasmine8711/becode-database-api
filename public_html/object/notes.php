@@ -85,9 +85,19 @@ class Note implements \JsonSerializable{
         return $stmt->execute();
     }
 
-    public function update($title, $content) {
-
-    }
+    public function update($newtitle, $newcontent) {
+        if ( empty( $newtitle ) || empty( $newcontent ) ) {
+            die("can not update");
+        }
+        $this->title = $newtitle;
+        $this->content = $newcontent;
+        $query="UPDATE notes SET title = :newtitle,note = :newcontent WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":newtitle", $this->title);
+        $stmt->bindParam(":newcontent", $this->content);
+        $stmt->bindParam(":id", $this->id);
+        return $stmt -> execute();
+    } 
 
     public function jsonSerialize() {
         // $vars = get_object_vars($this);
