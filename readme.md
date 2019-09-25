@@ -1,6 +1,6 @@
 # Simple API for a note app in PHP
 
-##the API
+## Create API
 I use ARC( Advanced Rest Client) application to test if the api works.
 Notes are accessed by TITLE for creation, showing, editing and deleting
 Updating notes.
@@ -33,4 +33,4 @@ http://localhost/notes/update.php?title=notetitle
 1. Prepared statment.
 1. PHP OOP.
 1. PHP class.
-1. Comment others's code on github.It is a part of the task, we need to comment each other's code on github.
+1. Comment others's code on github. It is a part of the task, we need to comment each other's code on github.
